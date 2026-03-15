@@ -2,6 +2,7 @@ import { Canvas } from "@react-three/fiber"
 import { OrbitControls } from "@react-three/drei"
 import Room from "./scene/Room"
 import Desk from "./scene/Desk"
+import Monitor from "./scene/Monitor"
 
 export default function App() {
   return (
@@ -11,6 +12,7 @@ export default function App() {
       <directionalLight position={[5, 10, 5]} intensity={1} />
       <Room />
       <Desk />
+      <Monitor />
       <OrbitControls />
      
     </Canvas>
