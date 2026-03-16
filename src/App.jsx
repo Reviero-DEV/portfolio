@@ -5,6 +5,7 @@ import Desk from "./scene/Desk"
 import Monitor from "./scene/Monitor"
 import Window from "./scene/window"
 import Bookshelf from "./scene/Bookshelf"
+import DeskAccessories from "./scene/Acessories"
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
       <Monitor />
       <Window />
       <Bookshelf />
+      <DeskAccessories />
       <OrbitControls />
      
     </Canvas>
