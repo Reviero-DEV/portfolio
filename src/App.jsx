@@ -4,6 +4,7 @@ import Room from "./scene/Room"
 import Desk from "./scene/Desk"
 import Monitor from "./scene/Monitor"
 import Window from "./scene/window"
+import Bookshelf from "./scene/Bookshelf"
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
       <Desk />
       <Monitor />
       <Window />
+      <Bookshelf />
       <OrbitControls />
      
     </Canvas>
