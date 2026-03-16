@@ -3,6 +3,7 @@ import { OrbitControls } from "@react-three/drei"
 import Room from "./scene/Room"
 import Desk from "./scene/Desk"
 import Monitor from "./scene/Monitor"
+import Window from "./scene/window"
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
       <Room />
       <Desk />
       <Monitor />
+      <Window />
       <OrbitControls />
      
     </Canvas>
