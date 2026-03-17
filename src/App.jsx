@@ -6,6 +6,7 @@ import Monitor from "./scene/Monitor"
 import Window from "./scene/window"
 import Bookshelf from "./scene/Bookshelf"
 import DeskAccessories from "./scene/Acessories"
+import Chair from "./scene/Chair"
 
 export default function App() {
   return (
@@ -19,6 +20,10 @@ export default function App() {
       <Window />
       <Bookshelf />
       <DeskAccessories />
+      <group rotation={[0, 2.5, 0]} position={[0, 0, -0.9]}>
+        <Chair />
+      </group>
+      
       <OrbitControls />
      
     </Canvas>
