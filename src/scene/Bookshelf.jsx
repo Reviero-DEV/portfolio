@@ -23,6 +23,10 @@ export default function Bookshelf() {
         <boxGeometry args={[0.2, 0.5, 0.3]} />
         <meshStandardMaterial color="#f39c12" />
       </mesh>
+      <mesh position={[-2, 3.8, -4.7]}>
+        <octahedronGeometry args={[0.15]} />
+        <meshStandardMaterial color="#fde400" metalness={0.5} roughness={0.2} />{" "}
+      </mesh>
     </>
   )
 }
