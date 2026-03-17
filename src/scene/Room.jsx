@@ -9,10 +9,18 @@ export default function Room() {
       <mesh position={[0, 2.5 , -5]}>
         <boxGeometry args={[10, 5, 0.2 ]} />
         <meshStandardMaterial color="#e5e5e5" />
+        <mesh position={[0, -2.45, 0.11]} rotation={[0, Math.PI / 2, 0]}>
+          <boxGeometry args={[0.02, 0.1, 10]} />
+          <meshStandardMaterial color="#0a0f52" />
+        </mesh>
       </mesh>
       
-      <mesh position={[-5, 2.5 , 0]}>
-        <boxGeometry args={[ 0.2 , 5, 10]} />
+      <mesh position={[-5, 2.5, 0]}>
+        <mesh position={[0.1, -2.45, 0]}>
+          <boxGeometry args={[0.02, 0.1, 10]} />
+          <meshStandardMaterial color="#0a0f52" />
+        </mesh>
+        <boxGeometry args={[0.2, 5, 10]} />
         <meshStandardMaterial color="#dddddd" />
       </mesh>
     </>
