@@ -1,3 +1,4 @@
+import { Trophy } from "../components/trophy";
 export default function Bookshelf() {
   return (
     <>
@@ -5,6 +6,7 @@ export default function Bookshelf() {
       <mesh position={[-2.5, 3.5, -4.8]}>
         <boxGeometry args={[2, 0.15, 0.4]} />
         <meshStandardMaterial color="#6b4f3b" />
+        <Trophy scale={2} position={[0.2, 0.07, 0.2]} />
       </mesh>
       {/* livros */}
       <mesh position={[-3.2, 3.8, -4.7]}>
