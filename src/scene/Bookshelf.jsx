@@ -4,7 +4,7 @@ export default function Bookshelf() {
     <>
       {/* prateleira */}
       <mesh position={[-2.5, 3.5, -4.8]}>
-        <boxGeometry args={[2, 0.15, 0.4]} />
+        <boxGeometry args={[2, 0.05, 0.4]} />
         <meshStandardMaterial color="#6b4f3b" />
         <Trophy scale={2} position={[0.2, 0.07, 0.2]} />
       </mesh>

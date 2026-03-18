@@ -1,7 +1,7 @@
 export default function Mousepad() {
   return (
     <>
-      <mesh position={[0, 1.08, -2]}>
+      <mesh position={[0, 0.02, 0]}>
         <boxGeometry args={[2.7, 0.015, 1]} />
         <meshStandardMaterial color="#29435c" />
       </mesh>
