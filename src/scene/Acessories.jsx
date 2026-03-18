@@ -1,15 +1,15 @@
 export default function DeskAccessories() {
   return (
     <>
-      <mesh position={[0, 1.05, -1.7]}>
+      <mesh position={[0, 1.07, -1.7]}>
         <boxGeometry args={[0.9, 0.05, 0.35]} />
         <meshStandardMaterial color="#1a1a1a" />
       </mesh>
-      <mesh position={[0.7, 1.05, -1.7]}>
+      <mesh position={[0.7, 1.07, -1.7]}>
         <boxGeometry args={[0.15, 0.05, 0.25]} />
         <meshStandardMaterial color="#2b2b2b" />
       </mesh>
-      <mesh position={[-1, 1.05, -2]}>
+      <mesh position={[-1, 1.07, -2]}>
         <cylinderGeometry args={[0.15, 0.15, 0.05]} />
         <meshStandardMaterial color="#333333" />
       </mesh>
