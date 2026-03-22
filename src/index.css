@@ -5,7 +5,38 @@
 
 body {
   display: flex;
-  background: darkgray;
+  background: #050a1a;
   align-items: center;
   height: 100vh;
+}
+
+.monitor-ui {
+  width: 220px;
+  padding: 20px;
+  background: radial-gradient(circle, #1e90ff22, #000000dd);
+  border-radius: 10px;
+  color: white;
+  font-family: sans-serif;
+  text-align: center;
+}
+.monitor-ui h2 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.monitor-ui button {
+  display: block;
+  width: 100%;
+  margin-top: 5px;
+  padding: 6px;
+  border: none;
+  border-radius: 6px;
+  background: #38bdf8;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.monitor-ui button:hover {
+  background: #91cee9;
 }

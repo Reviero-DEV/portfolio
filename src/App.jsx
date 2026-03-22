@@ -2,9 +2,11 @@ import { Canvas } from "@react-three/fiber";
 import { SoftShadows } from "@react-three/drei";
 import { ContactShadows } from "@react-three/drei";
 import { OrbitControls } from "@react-three/drei";
+import { useState } from "react";
 import Room from "./scene/Room";
 
 export default function App() {
+  const [section, setSection] = useState("home");
   return (
     <Canvas
       shadows
@@ -47,9 +49,9 @@ export default function App() {
         distance={10}
         decay={1}
       />
-      <pointLight position={[0, 4, 0]} intensity={3} color="#ffffff"/>
-      <Room />
+      <pointLight position={[0, 4, 0]} intensity={3} color="#ffffff" />
+      <Room section={section} setSection={setSection} />
       <OrbitControls />
-     
     </Canvas>
-  ) }
+  );
+}
