@@ -1,19 +1,20 @@
 export default function Chair() {
   return (
-    <group position={[0, 0, -0.6]}>
-      <mesh position={[0, 0.7, 0]} scale={[1, 0.3, 1]}>
+    <group position={[-2.5, 0, -2.2]} rotation={[0, 2.7, 0]} scale={1.2} >
+      <mesh position={[0, 0.7, 0]} scale={[1, 0.3, 1]} castShadow receiveShadow>
         <sphereGeometry args={[0.35, 32, 32]} />
         <meshStandardMaterial color="#1f2937" />
+        
       </mesh>
 
-      <mesh position={[0, 1.1, -0.37]} scale={[1, 1.2, 0.3]}  rotation={[-0.19, 0, 0]}>
+      <mesh position={[0, 1.1, -0.37]} scale={[1, 1.2, 0.3]}  rotation={[-0.19, 0, 0]} castShadow receiveShadow>
         <sphereGeometry args={[0.35, 32, 32]} />
-        <meshStandardMaterial color="#111827" />
+        <meshStandardMaterial color="#122d68" />
       </mesh>
 
       <mesh position={[0, 0.37, 0]}>
         <cylinderGeometry args={[0.04, 0.04, 0.7]} />
-        <meshStandardMaterial color="#555" metalness={0.8} roughness={0.3} />
+        <meshStandardMaterial color="#9c9999" roughness={-7} metalness={2}/>
       </mesh>
 
       {[...Array(4)].map((_, i) => {
@@ -25,7 +26,7 @@ export default function Chair() {
             rotation={[0, -angle, 0]}
           >
             <boxGeometry args={[0.3, 0.03, 0.05]} />
-            <meshStandardMaterial color="#333" />
+            <meshStandardMaterial color="#9c9999" roughness={-7} metalness={2}/>
           </mesh>
         );
       })}

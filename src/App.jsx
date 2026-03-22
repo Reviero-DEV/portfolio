@@ -1,29 +1,54 @@
-import { Canvas } from "@react-three/fiber"
-import { OrbitControls } from "@react-three/drei"
-import Room from "./scene/Room"
-import Desk from "./scene/Desk"
-import Monitor from "./scene/Monitor"
-import Window from "./scene/window"
-import Bookshelf from "./scene/Bookshelf"
-import DeskAccessories from "./scene/Acessories"
-import Chair from "./scene/Chair"
+import { Canvas } from "@react-three/fiber";
+import { SoftShadows } from "@react-three/drei";
+import { ContactShadows } from "@react-three/drei";
+import { OrbitControls } from "@react-three/drei";
+import Room from "./scene/Room";
 
 export default function App() {
   return (
-    <Canvas camera={{ position: [5, 3, 5], fov: 60 }}>
-     
-      <ambientLight intensity={ 0.6 } />
-      <directionalLight position={[5, 10, 5]} intensity={1} />
+    <Canvas
+      shadows
+      gl={{ antialias: true }}
+      camera={{ position: [5, 3, 8], fov: 50 }}
+      className="scene-canvas"
+    >
+      <ContactShadows
+        position={[0, 0.01, 0]}
+        opacity={0.4}
+        scale={10}
+        blur={2.5}
+        far={10}
+      />
+      <SoftShadows size={25} samples={16} />
+      <ambientLight intensity={0.5} />
+      <directionalLight
+        position={[4, 6, 4]}
+        intensity={0.1}
+        castShadow
+        shadow-mapSize-width={2048}
+        shadow-mapSize-height={2048}
+        shadow-bias={-0.0001}
+        shadow-camera-near={1}
+        shadow-camera-far={20}
+        shadow-camera-left={-10}
+        shadow-camera-right={10}
+        shadow-camera-top={10}
+        shadow-camera-bottom={-10}
+      >
+        <orthographicCamera
+          attach="shadow-camera"
+          args={[-10, 10, 10, -10, 1, 20]}
+        />
+      </directionalLight>
+      <pointLight
+        position={[-3, 3.5, -2]}
+        intensity={1.5}
+        color="#7abfff"
+        distance={10}
+        decay={1}
+      />
+      <pointLight position={[0, 4, 0]} intensity={3} color="#ffffff"/>
       <Room />
-      <Desk />
-      <Monitor />
-      <Window />
-      <Bookshelf />
-      <DeskAccessories />
-      <group rotation={[0, 2.5, 0]} position={[0, 0, -0.9]}>
-        <Chair />
-      </group>
-      
       <OrbitControls />
      
     </Canvas>

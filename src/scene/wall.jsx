@@ -32,11 +32,12 @@ export default function Wall() {
       geometry={geometry}
       position={[-5, 2.5, 0]}
       rotation={[0, Math.PI / 2, 0]}
+       receiveShadow
     >
       <meshStandardMaterial color="#e5e5e5" />
       <mesh position={[0, -2.45, 0.2]} rotation={[0, Math.PI / 2, 0]}>
           <boxGeometry args={[0.02, 0.1, 10]} />
-          <meshStandardMaterial color="#0a0f52" />
+          <meshStandardMaterial color="#074572" />
         </mesh>
       <Window />
     </mesh>

@@ -42,12 +42,14 @@ export default function Figure(props) {
               geometry={nodes.HandR_1.geometry}
               material={materials.Main}
               skeleton={nodes.HandR_1.skeleton}
+              castShadow receiveShadow
             />
             <skinnedMesh
               name="HandR_2"
               geometry={nodes.HandR_2.geometry}
               material={materials.Grey}
               skeleton={nodes.HandR_2.skeleton}
+              castShadow receiveShadow
             />
           </group>
           <group
@@ -60,12 +62,14 @@ export default function Figure(props) {
               geometry={nodes.HandL_1.geometry}
               material={materials.Main}
               skeleton={nodes.HandL_1.skeleton}
+              castShadow receiveShadow
             />
             <skinnedMesh
               name="HandL_2"
               geometry={nodes.HandL_2.geometry}
               material={materials.Grey}
               skeleton={nodes.HandL_2.skeleton}
+              castShadow receiveShadow
             />
           </group>
         </group>
