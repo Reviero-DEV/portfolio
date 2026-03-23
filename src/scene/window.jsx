@@ -1,20 +1,15 @@
 import { useRef } from "react"
 import { useFrame, useThree } from "@react-three/fiber"
-// import { useTexture } from "@react-three/drei"
-// import * as THREE from "three"
 import AnimatedView from "../components/decoration/windowLandscape"
 
 export default function Window() {
   const viewRef = useRef()
   const glassRef = useRef()
   const { camera } = useThree()
-  // const texture = useTexture("/landscape.mp4")
   useFrame(() => {
     if (!viewRef.current) return
-    // Parallax da paisagem (profundidade fake)
     viewRef.current.position.x = camera.position.x * 0.1
     viewRef.current.position.y = camera.position.y * 0.1
-    // leve "reflexo" no vidro baseado na câmera
     if (glassRef.current) {
       glassRef.current.rotation.y = camera.position.x * 0.02
     }
@@ -24,23 +19,22 @@ export default function Window() {
      
       <AnimatedView />
      
-      {/* 🧱 MOLDURA */}
       <group position={[0, 0, 0.4]}>
         <mesh position={[0, 0.8, 0]}>
           <boxGeometry args={[2.49, 0.1, 0.1]} />
-          <meshStandardMaterial color="#111" />
+          <meshStandardMaterial color="#11111188" />
         </mesh>
         <mesh position={[0, -1.05, 0]}>
           <boxGeometry args={[2.49, 0.1, 0.1]} />
-          <meshStandardMaterial color="#111" />
+          <meshStandardMaterial color="#11111181" />
         </mesh>
         <mesh position={[-1.2, -0.097, 0]}>
           <boxGeometry args={[0.1, 1.8, 0.1]} />
-          <meshStandardMaterial color="#111" />
+          <meshStandardMaterial color="#1111117a" />
         </mesh>
         <mesh position={[1.2, -0.097, 0]}>
           <boxGeometry args={[0.1, 1.8, 0.1]} />
-          <meshStandardMaterial color="#111" />
+          <meshStandardMaterial color="#1111118e" />
         </mesh>
       </group>
       <mesh ref={glassRef}>

@@ -14,18 +14,20 @@ export default function App() {
       camera={{ position: [5, 3, 8], fov: 50 }}
       className="scene-canvas"
     >
+      <color attach="background" args={["#0a0f1c"]} />
       <ContactShadows
         position={[0, 0.01, 0]}
-        opacity={0.4}
+        opacity={0.25}
         scale={10}
-        blur={2.5}
+        blur={3}
         far={10}
       />
       <SoftShadows size={25} samples={16} />
-      <ambientLight intensity={0.5} />
+      <ambientLight intensity={0.3} color="#b1bcda"/>
       <directionalLight
-        position={[4, 6, 4]}
-        intensity={0.1}
+        position={[-3, 5, 0]}
+        intensity={0.6}
+        color="#4da6ff"
         castShadow
         shadow-mapSize-width={2048}
         shadow-mapSize-height={2048}
@@ -44,12 +46,12 @@ export default function App() {
       </directionalLight>
       <pointLight
         position={[-3, 3.5, -2]}
-        intensity={1.5}
-        color="#7abfff"
+        intensity={0.5}
+        color="#ffae00e7"
         distance={10}
         decay={1}
       />
-      <pointLight position={[0, 4, 0]} intensity={3} color="#ffffff" />
+      <pointLight position={[1, 5, 1]} intensity={0.2} color="#00c3ff" />
       <Room section={section} setSection={setSection} />
       <OrbitControls />
     </Canvas>

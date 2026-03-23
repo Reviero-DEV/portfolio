@@ -19,6 +19,12 @@ export default function Bookshelf() {
             metalness={0.5}
             roughness={0.2}
           />{" "}
+          <pointLight
+            position={[0, 0.1, 0.19]}
+            intensity={0.3}
+            color="#4da6ff"
+            distance={2}
+          />
         </mesh>
       </mesh>
     </>

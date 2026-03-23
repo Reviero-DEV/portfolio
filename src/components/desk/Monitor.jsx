@@ -28,10 +28,10 @@ export default function Monitor({ setSection }) {
               roughness={-7}
               metalness={2}
               emissive="#0a0a0a"
-              emissiveIntensity={0.4}
+              emissiveIntensity={-3}
             />
           </RoundedBox>
-          
+
           <Html transform position={[0, 0, 0.03]} distanceFactor={1.5}>
             <div className="monitor-ui">
               <h2>Neto Reviero</h2>
@@ -43,9 +43,9 @@ export default function Monitor({ setSection }) {
         </group>
          <pointLight
             position={[0, 1.57, -1.47]}
-            intensity={0.7}
+            intensity={2}
             color="#4da6ff"
-            distance={1.7}
+            distance={1.4}
           />
       </group>
     </>

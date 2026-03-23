@@ -5,9 +5,9 @@
 
 body {
   display: flex;
-  background: #050a1a;
   align-items: center;
   height: 100vh;
+  margin: 0;
 }
 
 .monitor-ui {
