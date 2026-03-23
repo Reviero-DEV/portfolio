@@ -28,7 +28,7 @@ export default function Monitor({ setSection }) {
               roughness={-7}
               metalness={2}
               emissive="#0a0a0a"
-              emissiveIntensity={-3}
+              emissiveIntensity={-4}
             />
           </RoundedBox>
 

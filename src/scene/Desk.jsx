@@ -13,8 +13,8 @@ export default function Desk({setSection}) {
           <boxGeometry args={[3.5, 0.04, 1.5]} />
           <meshStandardMaterial
             color="#8b5e3c"
-            metalness={0.1}
-            roughness={0.5}
+            roughness={-2}
+              metalness={-0.7}
           />
           <Mousepad />
           <CoffeeMug />

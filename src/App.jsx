@@ -25,8 +25,8 @@ export default function App() {
       <SoftShadows size={25} samples={16} />
       <ambientLight intensity={0.3} color="#b1bcda"/>
       <directionalLight
-        position={[-3, 5, 0]}
-        intensity={0.6}
+        position={[-2, 0.5, 1]}
+        intensity={0.1}
         color="#4da6ff"
         castShadow
         shadow-mapSize-width={2048}
@@ -46,10 +46,10 @@ export default function App() {
       </directionalLight>
       <pointLight
         position={[-3, 3.5, -2]}
-        intensity={0.5}
+        intensity={0.9}
         color="#ffae00e7"
-        distance={10}
-        decay={1}
+        distance={7}
+        decay={1.5}
       />
       <pointLight position={[1, 5, 1]} intensity={0.2} color="#00c3ff" />
       <Room section={section} setSection={setSection} />

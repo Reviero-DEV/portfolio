@@ -9,12 +9,13 @@ export default function Chair() {
 
       <mesh position={[0, 1.1, -0.37]} scale={[1, 1.2, 0.3]}  rotation={[-0.19, 0, 0]} castShadow receiveShadow>
         <sphereGeometry args={[0.35, 32, 32]} />
-        <meshStandardMaterial color="#122d68" />
+        <meshStandardMaterial color="#122d68" roughness={-3}
+              metalness={-1}/>
       </mesh>
 
       <mesh position={[0, 0.37, 0]}>
         <cylinderGeometry args={[0.04, 0.04, 0.7]} />
-        <meshStandardMaterial color="#9c9999" roughness={-7} metalness={2}/>
+        <meshStandardMaterial color="#9c9999" roughness={-7} metalness={3}/>
       </mesh>
 
       {[...Array(4)].map((_, i) => {
