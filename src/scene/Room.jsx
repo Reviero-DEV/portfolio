@@ -5,7 +5,7 @@ import Bookshelf from "../scene/Bookshelf";
 import Chair from "../scene/Chair";
 import Wall from "./wall";
 
-export default function Room({setSection}) {
+export default function Room({ section, setSection }) {
   return (
     <>
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0, 0]} receiveShadow>
@@ -13,7 +13,7 @@ export default function Room({setSection}) {
         <meshStandardMaterial color="#cfcfcf" />
         <Rug />
       </mesh>
-      <Desk setSection={setSection}/>
+      <Desk section={section} setSection={setSection} />
       <Chair />
 
       <mesh position={[0, 2.5, -5]} receiveShadow>
@@ -26,7 +26,7 @@ export default function Room({setSection}) {
         <Bookshelf />
         <NamePlate />
       </mesh>
-      <Wall/>
+      <Wall />
     </>
   );
 }

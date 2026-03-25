@@ -5,7 +5,7 @@ import CoffeeMug from "../components/desk/CoffeeMug";
 import DeskAccessories from "../components/desk/Acessories";
 import Monitor from "../components/desk/Monitor";
 
-export default function Desk({setSection}) {
+export default function Desk({section, setSection }) {
   return (
     <>
       <group position={[-2, 0, -1.5]} scale={1.2}>
@@ -14,13 +14,13 @@ export default function Desk({setSection}) {
           <meshStandardMaterial
             color="#8b5e3c"
             roughness={-2}
-              metalness={-0.7}
+            metalness={-0.7}
           />
           <Mousepad />
           <CoffeeMug />
           <Laptop />
           <DeskAccessories />
-          <Monitor setSection={setSection}/>
+          <Monitor section={section} setSection={setSection} />
           <pointLight
             position={[-1, 0.5, 0.075]}
             intensity={0.7}

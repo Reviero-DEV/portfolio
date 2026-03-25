@@ -1,13 +1,14 @@
 import { RoundedBox } from "@react-three/drei";
 import { Html } from "@react-three/drei";
 
-export default function Monitor({ setSection }) {
+export default function Monitor({ section, setSection }) {
+  const isActive = section === null;
   return (
     <>
       <group position={[0, -1.07, 1.7]}>
         <mesh position={[0, 1.1, -2]}>
           <boxGeometry args={[0.3, 0.02, 0.2]} />
-          <meshStandardMaterial color="#222222 " />
+          <meshStandardMaterial color="#222222" />
         </mesh>
 
         <mesh position={[0, 1.25, -2]}>
@@ -32,21 +33,28 @@ export default function Monitor({ setSection }) {
             />
           </RoundedBox>
 
-          <Html transform position={[0, 0, 0.03]} distanceFactor={1.5}>
-            <div className="monitor-ui">
-              <h2>Neto Reviero</h2>
-              <button onClick={() => setSection("about")}>Sobre</button>
-              <button onClick={() => setSection("projects")}>Projetos</button>
-              <button onClick={() => setSection("contact")}>Contato</button>
-            </div>
-          </Html>
+          {isActive && (
+            <Html
+              transform
+              position={[0, 0, 0.03]}
+              distanceFactor={1.5}
+              visible={isActive}
+            >
+              <div className="monitor-ui" visible={isActive}>
+                <h2>Meu Nome</h2>
+                <button onClick={() => setSection("about")}>Sobre</button>
+                <button onClick={() => setSection("projects")}>Projetos</button>
+                <button onClick={() => setSection("contact")}>Contato</button>
+              </div>
+            </Html>
+          )}
         </group>
-         <pointLight
-            position={[0, 1.57, -1.47]}
-            intensity={2}
-            color="#4da6ff"
-            distance={1.4}
-          />
+        <pointLight
+          position={[0, 1.57, -1.47]}
+          intensity={2}
+          color="#4da6ff"
+          distance={1.4}
+        />
       </group>
     </>
   );
