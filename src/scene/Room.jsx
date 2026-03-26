@@ -5,7 +5,12 @@ import Bookshelf from "../scene/Bookshelf";
 import Chair from "../scene/Chair";
 import Wall from "./wall";
 
-export default function Room({ section, setSection }) {
+export default function Room({
+  section,
+  setSection,
+  hoveredObject,
+  setHoveredObject,
+}) {
   return (
     <>
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0, 0]} receiveShadow>
@@ -13,7 +18,12 @@ export default function Room({ section, setSection }) {
         <meshStandardMaterial color="#cfcfcf" />
         <Rug />
       </mesh>
-      <Desk section={section} setSection={setSection} />
+      <Desk
+        section={section}
+        setSection={setSection}
+        hoveredObject={hoveredObject}
+        setHoveredObject={setHoveredObject}
+      />
       <Chair />
 
       <mesh position={[0, 2.5, -5]} receiveShadow>
@@ -23,10 +33,21 @@ export default function Room({ section, setSection }) {
           <boxGeometry args={[0.02, 0.1, 10]} />
           <meshStandardMaterial color="#074572" />
         </mesh>
-        <Bookshelf />
-        <NamePlate />
+        <Bookshelf
+          setSection={setSection}
+          setHoveredObject={setHoveredObject}
+        />
+        <NamePlate
+          setSection={setSection}
+          setHoveredObject={setHoveredObject}
+        />
       </mesh>
-      <Wall />
+      <Wall
+        section={section}
+        setSection={setSection}
+        hoveredObject={hoveredObject}
+        setHoveredObject={setHoveredObject}
+      />
     </>
   );
 }

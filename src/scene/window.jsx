@@ -2,7 +2,7 @@ import { useRef } from "react"
 import { useFrame, useThree } from "@react-three/fiber"
 import AnimatedView from "../components/decoration/windowLandscape"
 
-export default function Window() {
+export default function Window({setSection, setHoveredObject}) {
   const viewRef = useRef()
   const glassRef = useRef()
   const { camera } = useThree()
@@ -15,7 +15,15 @@ export default function Window() {
     }
   })
   return (
-    <group position={[1.77, 1, -0.2]}>
+    <group position={[1.77, 1, -0.2]} onPointerOver={() => {
+          document.body.style.cursor = "pointer";
+          setHoveredObject("window");
+        }}
+        onPointerOut={() => {
+          document.body.style.cursor = "default";
+          setHoveredObject(null);
+        }}
+         onClick={() => setSection("contact")}>
      
       <AnimatedView />
      

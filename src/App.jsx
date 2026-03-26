@@ -10,6 +10,7 @@ import About from "./ui/sections/About";
 
 export default function App() {
   const [section, setSection] = useState(null);
+  const [hoveredObject, setHoveredObject] = useState(null);
   useEffect(() => console.log("section:", section), [section]);
 
   return (
@@ -58,13 +59,28 @@ export default function App() {
           decay={1.5}
         />
         <pointLight position={[1, 5, 1]} intensity={0.2} color="#00c3ff" />
-        <Room section={section} setSection={setSection} />
+        <Room
+          section={section}
+          setSection={setSection}
+          hoveredObject={hoveredObject}
+          setHoveredObject={setHoveredObject}
+        />
         <OrbitControls />
       </Canvas>
 
       {section === "projects" && <Projects setSection={setSection} />}
       {section === "contact" && <Contacts setSection={setSection} />}
       {section === "about" && <About setSection={setSection} />}
+
+      {hoveredObject && (
+        <div className="scene-tooltip">
+          {hoveredObject === "monitor" &&
+            "Navegue com a tela do monitor ou objetos da parede"}
+          {hoveredObject === "NamePlate" && "Ver sobre mim"}
+          {hoveredObject === "Bookshelf" && "Explorar Projetos"}
+          {hoveredObject === "window" && "Abrir contatos"}
+        </div>
+      )}
     </>
   );
 }

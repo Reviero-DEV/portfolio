@@ -5,7 +5,7 @@ import CoffeeMug from "../components/desk/CoffeeMug";
 import DeskAccessories from "../components/desk/Acessories";
 import Monitor from "../components/desk/Monitor";
 
-export default function Desk({section, setSection }) {
+export default function Desk({ section, setSection, setHoveredObject }) {
   return (
     <>
       <group position={[-2, 0, -1.5]} scale={1.2}>
@@ -20,7 +20,11 @@ export default function Desk({section, setSection }) {
           <CoffeeMug />
           <Laptop />
           <DeskAccessories />
-          <Monitor section={section} setSection={setSection} />
+          <Monitor
+            section={section}
+            setSection={setSection}
+            setHoveredObject={setHoveredObject}
+          />
           <pointLight
             position={[-1, 0.5, 0.075]}
             intensity={0.7}
