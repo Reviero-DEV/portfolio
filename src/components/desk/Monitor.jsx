@@ -1,7 +1,7 @@
 import { RoundedBox } from "@react-three/drei";
 import { Html } from "@react-three/drei";
 
-export default function Monitor({ section, setSection }) {
+export default function Monitor({ section, setSection, setHoveredObject }) {
   const isActive = section === null;
   return (
     <>
@@ -15,7 +15,17 @@ export default function Monitor({ section, setSection }) {
           <boxGeometry args={[0.08, 0.4, 0.05]} />
           <meshStandardMaterial color="#2c2c2c" />
         </mesh>
-        <group position={[0, 1.6, -2]}>
+        <group
+          position={[0, 1.6, -2]}
+          onPointerOver={() => {
+            document.body.style.cursor = "pointer";
+            setHoveredObject("monitor", Html);
+          }}
+          onPointerOut={() => {
+            document.body.style.cursor = "default";
+            setHoveredObject(null);
+          }}
+        >
           <RoundedBox
             args={[1.4, 0.8, 0.07]}
             radius={0.05}
@@ -36,15 +46,27 @@ export default function Monitor({ section, setSection }) {
           {isActive && (
             <Html
               transform
+              scale={0.45}
               position={[0, 0, 0.03]}
-              distanceFactor={1.5}
-              visible={isActive}
+              distanceFactor={2}
             >
-              <div className="monitor-ui" visible={isActive}>
-                <h2>Meu Nome</h2>
-                <button onClick={() => setSection("about")}>Sobre</button>
-                <button onClick={() => setSection("projects")}>Projetos</button>
-                <button onClick={() => setSection("contact")}>Contato</button>
+              <div className="monitor-ui">
+                <span className="monitor-badge">PORTFÓLIO INTERATIVO</span>
+                <h2>Olá, eu sou Neto Reviero</h2>
+                <p className="monitor-role">
+                  Desenvolvedor Front-end focado em React e experiências
+                  interativas
+                </p>
+                <div className="monitor-buttons">
+                  <button onClick={() => setSection("about")}>Sobre mim</button>
+                  <button onClick={() => setSection("projects")}>
+                    Projetos
+                  </button>
+                  <button onClick={() => setSection("contact")}>Contato</button>
+                </div>
+                <span className="monitor-hint">
+                  Explore os objetos das paredes para navegar
+                </span>
               </div>
             </Html>
           )}
