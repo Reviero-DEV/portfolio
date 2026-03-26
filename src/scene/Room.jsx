@@ -35,10 +35,12 @@ export default function Room({
         </mesh>
         <Bookshelf
           setSection={setSection}
+          hoveredObject={hoveredObject}
           setHoveredObject={setHoveredObject}
         />
         <NamePlate
           setSection={setSection}
+          hoveredObject={hoveredObject}
           setHoveredObject={setHoveredObject}
         />
       </mesh>

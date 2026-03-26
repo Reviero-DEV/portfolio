@@ -2,7 +2,7 @@ import * as THREE from "three";
 import { useMemo } from "react";
 import Window from "./window";
 
-export default function Wall({ setSection, setHoveredObject}) {
+export default function Wall({ setSection, hoveredObject, setHoveredObject}) {
   const geometry = useMemo(() => {
     const width = 10;
     const height = 10;
@@ -39,7 +39,7 @@ export default function Wall({ setSection, setHoveredObject}) {
           <boxGeometry args={[0.02, 0.1, 10]} />
           <meshStandardMaterial color="#074572" />
         </mesh>
-      <Window setSection={setSection} setHoveredObject={setHoveredObject}/>
+      <Window setSection={setSection} hoveredObject={hoveredObject} setHoveredObject={setHoveredObject}/>
     </mesh>
   );
 }

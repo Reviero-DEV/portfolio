@@ -1,6 +1,6 @@
 import { Text, RoundedBox, Edges } from "@react-three/drei";
 
-export function NamePlate({ setSection, setHoveredObject }) {
+export function NamePlate({ setSection, hoveredObject, setHoveredObject }) {
   return (
     <RoundedBox
       args={[2.5, 0.8, 0.05]}
@@ -17,9 +17,14 @@ export function NamePlate({ setSection, setHoveredObject }) {
       }}
       onClick={() => setSection("about")}
     >
-      <meshStandardMaterial color="#0d1f52" />
-      <Edges threshold={15} color="#00ffff" lineWidth={2} />
-
+      <meshStandardMaterial color="#0d1f52" emissive={hoveredObject === "NamePlate" ? "#00ffff" : "#000000"} 
+    emissiveIntensity={hoveredObject === "NamePlate" ? 0.02 : 0} />
+      <Edges
+        threshold={15}
+        color={hoveredObject === "NamePlate" ? "#ffffffbe" : "#00ffff"}
+        lineWidth={hoveredObject === "NamePlate" ? 3 : 1.7}
+      />
+      
       <Text
         position={[0, 0.2, 0.03]}
         fontSize={0.25}

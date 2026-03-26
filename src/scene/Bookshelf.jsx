@@ -2,7 +2,11 @@ import { Trophy } from "../components/decoration/trophy";
 import Books from "../components/decoration/books";
 import { Car } from "../components/decoration/car";
 import Figure from "../components/decoration/figure";
-export default function Bookshelf({ setSection, setHoveredObject }) {
+export default function Bookshelf({
+  setSection,
+  hoveredObject,
+  setHoveredObject,
+}) {
   return (
     <>
       <mesh
@@ -20,7 +24,13 @@ export default function Bookshelf({ setSection, setHoveredObject }) {
         onClick={() => setSection("projects")}
       >
         <boxGeometry args={[3, 0.05, 0.4]} />
-        <meshStandardMaterial color="#6b4f3b" roughness={1} metalness={3.5} />
+        <meshStandardMaterial
+          color={hoveredObject === "Bookshelf" ? "#ffffffbe" : "#6b4f3b"}
+          roughness={2}
+          metalness={3.5}
+          emissive={hoveredObject === "Bookshelf" ? "#00ffff" : "#000000"}
+          emissiveIntensity={hoveredObject === "Bookshelf" ? 0.2 : 0}
+        />
         <Trophy
           scale={2}
           position={[-0.3, 0.03, 0.2]}

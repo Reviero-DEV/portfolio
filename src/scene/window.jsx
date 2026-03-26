@@ -2,10 +2,14 @@ import { useRef } from "react"
 import { useFrame, useThree } from "@react-three/fiber"
 import AnimatedView from "../components/decoration/windowLandscape"
 
-export default function Window({setSection, setHoveredObject}) {
-  const viewRef = useRef()
-  const glassRef = useRef()
-  const { camera } = useThree()
+export default function Window({
+  setSection,
+  hoveredObject,
+  setHoveredObject,
+}) {
+  const viewRef = useRef();
+  const glassRef = useRef();
+  const { camera } = useThree();
   useFrame(() => {
     if (!viewRef.current) return
     viewRef.current.position.x = camera.position.x * 0.1
@@ -30,19 +34,35 @@ export default function Window({setSection, setHoveredObject}) {
       <group position={[0, 0, 0.4]}>
         <mesh position={[0, 0.8, 0]}>
           <boxGeometry args={[2.49, 0.1, 0.1]} />
-          <meshStandardMaterial color="#11111188" />
+          <meshStandardMaterial
+            color="#11111188"
+            emissive={hoveredObject === "window" ? "#00ffff" : "#000000"}
+            emissiveIntensity={hoveredObject === "window" ? 0.1 : 0}
+          />
         </mesh>
         <mesh position={[0, -1.05, 0]}>
           <boxGeometry args={[2.49, 0.1, 0.1]} />
-          <meshStandardMaterial color="#11111181" />
+          <meshStandardMaterial
+            color="#11111181"
+            emissive={hoveredObject === "window" ? "#00ffff" : "#000000"}
+            emissiveIntensity={hoveredObject === "window" ? 0.1 : 0}
+          />
         </mesh>
         <mesh position={[-1.2, -0.097, 0]}>
           <boxGeometry args={[0.1, 1.8, 0.1]} />
-          <meshStandardMaterial color="#1111117a" />
+          <meshStandardMaterial
+            color="#1111117a"
+            emissive={hoveredObject === "window" ? "#00ffff" : "#000000"}
+            emissiveIntensity={hoveredObject === "window" ? 0.1 : 0}
+          />
         </mesh>
         <mesh position={[1.2, -0.097, 0]}>
           <boxGeometry args={[0.1, 1.8, 0.1]} />
-          <meshStandardMaterial color="#1111118e" />
+          <meshStandardMaterial
+            color="#1111118e"
+            emissive={hoveredObject === "window" ? "#00ffff" : "#000000"}
+            emissiveIntensity={hoveredObject === "window" ? 0.1 : 0}
+          />
         </mesh>
       </group>
       <mesh ref={glassRef}>
