@@ -18,7 +18,7 @@ export default function App() {
       <Canvas
         shadows
         gl={{ antialias: true }}
-        camera={{ position: [5, 3, 8], fov: 50 }}
+        camera={{ position: [2.5, 2.05, 5.2], fov: 42 }}
         className="scene-canvas"
       >
         <color attach="background" args={["#0a0f1c"]} />
@@ -65,7 +65,18 @@ export default function App() {
           hoveredObject={hoveredObject}
           setHoveredObject={setHoveredObject}
         />
-        <OrbitControls />
+        <OrbitControls
+          target={[0, 1.8, -1]}
+          enablePan={false}
+          enableZoom={false}
+          enableDamping={true}
+          dampingFactor={0.08}
+          rotateSpeed={0.55}
+          minAzimuthAngle={0.7}
+          maxAzimuthAngle={0.9}
+          minPolarAngle={1.18}
+          maxPolarAngle={1.42}
+        />
       </Canvas>
 
       {section === "projects" && <Projects setSection={setSection} />}
