@@ -125,7 +125,8 @@ body {
 
 .service-list {
   display: flex;
-  gap: 30px;
+  gap: 40px;
+  padding-top: 35px;
 }
 
 .service-list img {
@@ -135,12 +136,29 @@ body {
 
 .service-card {
   display: grid;
+  grid-template-rows: 115px 43px 95px auto;
   justify-items: center;
   min-width: 200px;
   background: #5a98e321;
   border: 1px solid #00ffff1c;
   border-radius: 7px;
   padding: 20px;
+  text-align: center;
+}
+
+@supports (scrollbar-width: thin) {
+
+  .service-list {
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+    scroll-behavior: smooth;
+    scrollbar-gutter: stable;
+  }
+
+  .service-list:hover {
+    scrollbar-width: thin;
+    scrollbar-color: #4b5563 transparent;
+  }
 }
 
 .about-stats {
