@@ -3,11 +3,6 @@ import { RoundedBox } from "@react-three/drei";
 export default function DeskAccessories() {
   return (
     <>
-      <mesh position={[0, 0.05, 0.3]}>
-        <boxGeometry args={[0.9, 0.05, 0.35]} />
-        <meshStandardMaterial color="#1a1a1a" />
-      </mesh>
-
       <RoundedBox
         args={[0.07, 0.03, 0.1]}
         radius={0.015}

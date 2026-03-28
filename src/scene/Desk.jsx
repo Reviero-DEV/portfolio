@@ -4,6 +4,7 @@ import Laptop from "../components/desk/Laptop";
 import CoffeeMug from "../components/desk/CoffeeMug";
 import DeskAccessories from "../components/desk/Acessories";
 import Monitor from "../components/desk/Monitor";
+import { Keyboard } from "../components/desk/Keyboard";
 
 export default function Desk({ section, setSection, setHoveredObject }) {
   return (
@@ -20,6 +21,7 @@ export default function Desk({ section, setSection, setHoveredObject }) {
           <CoffeeMug />
           <Laptop />
           <DeskAccessories />
+          <Keyboard position={[0, 0.03, 0.1]}/>
           <Monitor
             section={section}
             setSection={setSection}
