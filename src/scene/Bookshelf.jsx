@@ -39,14 +39,14 @@ export default function Bookshelf({
         />
         <Books castShadow receiveShadow />
         <Car
-          position={[0.7, 0.025, 0]}
+          position={[1.17, 0.025, 0]}
           scale={0.1}
-          rotation={[0, -0.5, 0]}
+          rotation={[0, 0.5, 0]}
           castShadow
           receiveShadow
         />
-        <Figure position={[1.17, 0, 0]} scale={0.1} castShadow receiveShadow />
-        <mesh position={[0.3, 0.3, 0]} castShadow receiveShadow>
+        <Figure position={[0.3, 0, 0]} scale={0.1} castShadow receiveShadow />
+        <mesh position={[0.7, 0.3, 0]} castShadow receiveShadow>
           <octahedronGeometry args={[0.15]} />
           <meshStandardMaterial
             color="#fde400"
@@ -54,8 +54,8 @@ export default function Bookshelf({
             roughness={0.2}
           />{" "}
           <pointLight
-            position={[0, 0.1, 0.19]}
-            intensity={0.3}
+            position={[0, -0.07, 0.17]}
+            intensity={0.4}
             color="#4da6ff"
             distance={2}
           />

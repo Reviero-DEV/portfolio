@@ -18,7 +18,7 @@ export default function App() {
       <Canvas
         shadows
         gl={{ antialias: true }}
-        camera={{ position: [2.5, 2.05, 5.2], fov: 42 }}
+        camera={{ position: [2.5, 2.05, 5.2], fov: 40 }}
         className="scene-canvas"
       >
         <color attach="background" args={["#0a0f1c"]} />

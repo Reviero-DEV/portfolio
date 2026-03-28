@@ -6,7 +6,7 @@ export function NamePlate({ setSection, hoveredObject, setHoveredObject }) {
       args={[2.5, 0.8, 0.05]}
       radius={0.07}
       smoothness={4}
-      position={[0.7, 1.7, 0.1]}
+      position={[0.7, 1.5, 0.1]}
       onPointerOver={() => {
         document.body.style.cursor = "pointer";
         setHoveredObject("NamePlate");
@@ -32,7 +32,7 @@ export function NamePlate({ setSection, hoveredObject, setHoveredObject }) {
         anchorX="center"
         anchorY="middle"
       >
-        Neto Reviero
+        Meu Nome
       </Text>
 
       <Text position={[0, -0.1, 0.03]} fontSize={0.15} color="#00ffff">

@@ -24,7 +24,7 @@ export default function AnimatedView() {
     }
   }, []);
   return (
-    <mesh ref={meshRef} position={[0, 0, -5]}>
+    <mesh ref={meshRef} position={[3, 0, -3]} rotation={[0, 0.5, 0]}>
       <planeGeometry args={[10, 5]} />
       <meshBasicMaterial toneMapped={false} />
     </mesh>
