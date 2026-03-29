@@ -20,6 +20,7 @@ export default function App() {
         gl={{ antialias: true }}
         camera={{ position: [2.5, 2.05, 5.2], fov: 40 }}
         className="scene-canvas"
+        eventPrefix="client"
       >
         <color attach="background" args={["#0a0f1c"]} />
         <ContactShadows

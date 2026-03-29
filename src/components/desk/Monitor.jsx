@@ -17,11 +17,13 @@ export default function Monitor({ section, setSection, setHoveredObject }) {
         </mesh>
         <group
           position={[0, 1.6, -2]}
-          onPointerOver={() => {
+          onPointerOver={(e) => {
+            e.stopPropagation();
             document.body.style.cursor = "pointer";
             setHoveredObject("monitor", Html);
           }}
-          onPointerOut={() => {
+          onPointerOut={(e) => {
+            e.stopPropagation();
             document.body.style.cursor = "default";
             setHoveredObject(null);
           }}
@@ -50,7 +52,20 @@ export default function Monitor({ section, setSection, setHoveredObject }) {
               position={[0, 0, 0.03]}
               distanceFactor={2}
             >
-              <div className="monitor-ui">
+              <div
+                className="monitor-ui"
+                onPointerOver={(e) => {
+                  e.stopPropagation();
+                  document.body.style.cursor = "default";
+                  setHoveredObject(null);
+                }}
+                onPointerDown={(e) => e.stopPropagation()}
+                onPointerUp={(e) => e.stopPropagation()}
+                onPointerMove={(e) => e.stopPropagation()}
+                onPointerEnter={(e) => e.stopPropagation()}
+                onClick={(e) => e.stopPropagation()}
+                onWheel={(e) => e.stopPropagation()}
+              >
                 <span className="monitor-badge">PORTFÓLIO INTERATIVO</span>
                 <h2>Olá, eu sou Neto Reviero</h2>
                 <p className="monitor-role">

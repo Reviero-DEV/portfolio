@@ -19,11 +19,13 @@ export default function Window({
     }
   })
   return (
-    <group position={[1.77, 1, -0.2]} onPointerOver={() => {
+    <group position={[1.77, 1, -0.2]} onPointerOver={(e) => {
+      e.stopPropagation();
           document.body.style.cursor = "pointer";
           setHoveredObject("window");
         }}
-        onPointerOut={() => {
+        onPointerOut={(e) => {
+          e.stopPropagation();
           document.body.style.cursor = "default";
           setHoveredObject(null);
         }}
