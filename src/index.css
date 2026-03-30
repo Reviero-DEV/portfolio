@@ -235,7 +235,7 @@ body {
   cursor: pointer;
 }
 
-button,
+.service-list button,
 .about-stats a {
   background: linear-gradient(135deg, #7fffd4, #1d5963);
   color: #08111f;
@@ -250,7 +250,8 @@ button,
   text-decoration: none;
 }
 
-button:hover,
+.service-list button:hover,
+.close-btn:hover,
 .about-stats a:hover {
   transform: translateY(-2px) scale(1.03);
   box-shadow: 0 0 17px #00ffff;

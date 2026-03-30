@@ -88,9 +88,10 @@ export default function Monitor({ section, setSection, setHoveredObject }) {
         </group>
         <pointLight
           position={[0, 1.57, -1.47]}
-          intensity={2}
+          intensity={3}
           color="#4da6ff"
           distance={1.4}
+          decay={2}
         />
       </group>
     </>
