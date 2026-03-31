@@ -32,7 +32,7 @@ export function NamePlate({ setSection, hoveredObject, setHoveredObject }) {
         anchorX="center"
         anchorY="middle"
       >
-        Meu Nome
+        Neto Reviero
       </Text>
 
       <Text position={[0, -0.1, 0.03]} fontSize={0.15} color="#00ffff">
