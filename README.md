@@ -9,10 +9,6 @@ A aplicação simula um ambiente 3D estilizado, com objetos clicáveis, monitor 
 ### Interação no monitor
 ![Preview Monitor](public/previewMonitor.png)
 
-
-## 🚀 Deploy
-🔗 **Acesse o projeto:** [SEU_LINK_AQUI]
-
 ## ✨ Funcionalidades
 - Ambiente 3D interativo com **React Three Fiber**
 - Objetos clicáveis com feedback visual
